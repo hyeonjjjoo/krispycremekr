@@ -126,6 +126,16 @@ $(function(){
        
     });
     
+    // 컨텐츠1
+    $('.cnt03 article').click(function(){
+        var img = $(this).find('.image').attr('data-img');
+        $('.cnt03 article').removeClass('on');
+        $(this).addClass('on');
+        $('.cnt03 .artTop').find('.image').css({
+            backgroundImage : img
+        });
+        
+    });
 
     
 

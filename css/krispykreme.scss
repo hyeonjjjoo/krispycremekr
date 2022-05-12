@@ -788,17 +788,42 @@ ul.nav{
         &.cnt03{
             section{
                 .artTop{
+
+                    transform-origin: center;
+                    animation-name: shake;
+                    animation-duration: 0.5s;
+                    animation-delay: 0.5s;
+                    animation-iteration-count: unset;
+                    animation-fill-mode: forwards;
+                    @keyframes shake {
+                        0%{
+                            transform: rotate(0deg);
+                        }
+                        25%{
+                            transform: rotate(-2deg);
+                        }
+                        50%{
+                            transform: rotate(2deg);
+                        }
+                        75%{
+                            transform: rotate(-2deg);
+                        }
+                        100%{
+                            transform: rotate(0deg);
+                        }
+                    }
                     article{
                         display: flex;
                         width: 100%;
                         overflow: hidden;
                         outline: $gr solid 6px;
-                        box-shadow: 10px 10px 3px 8px #c9c9c9;
-                        
+                        box-shadow: 10px 10px 3px 8px #c9c9c9;     
                         .image{
                             width: calc(100% / 12 * 5);
                             height: 400px;
-                            @include bg();
+                            background-position: top;
+                            background-size: cover;
+                            background-repeat: no-repeat;
                             background-image: url('../images/ev01.jpg');
                         }
                         .texts{
@@ -862,6 +887,7 @@ ul.nav{
                             box-shadow: 0 0 20px #ff3131 inset;
                         }
                         .image{
+                            transition: all 0.3s;
                             height: 240px;
                             border-radius: 20px;
                             box-shadow: -4px -4px 9px #c9c9c9 inset;
@@ -879,6 +905,10 @@ ul.nav{
                                 color: $gr;
                             }
                         }
+                        &.on .image{
+                            box-shadow: 0 0 20px #ff3131 inset;
+                        }
+
                     }
                 }
             }
