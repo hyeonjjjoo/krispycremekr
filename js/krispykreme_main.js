@@ -126,14 +126,28 @@ $(function(){
        
     });
     
-    // 컨텐츠1
-    $('.cnt03 article').click(function(){
+    // 컨텐츠3
+    var artT = $('.cnt03 .artTop');
+    var art = $('.cnt03 article')
+    art.click(function(){
+        var ind = $(this).index();
         var img = $(this).find('.image').attr('data-img');
-        $('.cnt03 article').removeClass('on');
+        artT.css({
+            animationName: 'shake'
+        });
+        $(this).mousemove(function(){
+            artT.css({
+                animationName: 'none'
+            });
+        });
+        art.removeClass('on');
         $(this).addClass('on');
-        $('.cnt03 .artTop').find('.image').css({
+        artT.find('.image').css({
             backgroundImage : img
         });
+        $('.txtGroup').animate({
+            marginTop : -400 * ind + 'px'
+        },400);
         
     });
 
