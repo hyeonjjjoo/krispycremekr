@@ -62,7 +62,7 @@ $grey: #7d7d7d;
 
 ul.nav{
     position: fixed;
-    left: 130px;
+    left: 5%;;
     bottom: 200px;
     display: none;
     li{
@@ -154,43 +154,65 @@ ul.nav{
     border-top: 10px solid $gr;
     header{
         @include grid('pc');
-        padding-top: 20px;
-        .hdrTop{
+        padding: 20px 0px;
+        display: flex;
+        justify-content: space-between;
+        .hdrLeft{
+            width: calc(100% / 12 * 5);
             display: flex;
+            justify-content: space-between;
             .image{
-                width: calc(100% / 12 * 3.5);
-                height: 100px;
-                margin: 0 auto;
+                width: calc(100% / 5 * 3);
+                height: 60px;
                 @include bg;
                 text-indent: -9999px;     
                 background-image: url('../images/logo.png');
-                margin-left: calc(100% / 12 * 4.2);
             }
-            .info{
+            .btn{
+                background-color: $red;
+                color: #fff;
+                border-radius: 30px;
+                width: calc(100% / 5 * 1.6);
+                height: 50px;
+                padding: 6px 14px;
                 display: flex;
                 justify-content: space-between;
-                width: calc(100% / 12 * 1.1);
-                h5{
-                    font-size: 18px;
-                    line-height: 40px;
-                    margin-top: 40px;
-                    font-family: 'xc';
-                    &:nth-child(2){
-                        font-size: 25px;
+                .icon{
+                    text-indent: -9999px;
+                    width: 40px;
+                    height: 40px;
+                    @include bg;
+                    background-image: url('../images/hdr01.png');
+                }
+                .texts{
+                    
+                    span{
+                        font-weight: 700;
+                        display: block;
+                        &:nth-child(2){
+                            font-size: 18px;
+                        }
                     }
                 }
             }
         }
-        .hdrBtm{
-            padding-top: 20px;
-            nav{
-                display: flex;
-                justify-content: space-between;
-                h4{
-                    line-height: 40px;
-                    font-size: 17px;
-                    font-weight: 700;
-                }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            width: calc(100% / 12 * 5);
+            h4{
+                font-size: 18px;
+                line-height: 50px;
+                font-family: 'xc';
+                color: $gr;
+                font-family: 'gmB';
+            }
+            .icon{
+                text-indent: -9999px;
+                width: 40px;
+                height: 40px;
+                @include bg;
+                background-image: url('../images/doughnut-marker.svg');
             }
         }
     }
@@ -233,7 +255,6 @@ ul.nav{
         }
     }
     
-
     .ovrGrid{
         position: absolute;
         width: 100%;
@@ -529,10 +550,13 @@ ul.nav{
                         &:hover{
                             @for $loc from 1 through 6{
                             .image.i#{$loc}::before{
-                                @include bg;
-                                background-size: cover;
+                                @include bgv;
                                 background-image: url('../images/bg#{$loc}.jpg');
-                                } 
+                            } 
+                        }
+                        .image::before{
+                                @include bgv;
+                                background-image: url('../images/bg7.png');
                             }
                         }
                         .image{
@@ -793,6 +817,7 @@ ul.nav{
                     animation-delay: 0.2s;
                     animation-iteration-count: unset;
                     animation-fill-mode: forwards;
+                    
                     @keyframes shake {
                         0%{
                             transform: rotate(0deg);
@@ -926,47 +951,69 @@ ul.nav{
                     height: 340px;
                     margin: 0px 5px;
                     position: relative;
+                    cursor: pointer;
                     &:hover .image{  
                         &::before{
-                            position: absolute;
-                            content: '';
-                            display: block;
                             width: 100%;
-                            height: 10px;
-                            background-color: $red;
-                            top: 0;
-                            right: 0;
-                            z-index: 5;
+                        }
+                        &::after{
+                            height: 100%;
                         }
                     }
-                    
+                    &:hover .texts{
+                        background-color: rgba(255, 255, 255, 0.842);
+                        h4{
+                            color: $red
+                        }
+                    }  
+                    &:hover{  
+                        &::after{
+                            width: 100%;
+                        }
+                        &::before{
+                            height: 100%;
+                        }
+                    }
                     .image{
                         height: 340px;
                         position: relative;
                         z-index: -1;
                         @include bgv;
+                        background-position: right;
                         background-color: #fc0;
                         @for $img from 1 through 3{
                             &.i#{$img}{
                                 background-image: url('../images/sns0#{$img}.png');
                             }
                         }
-                        &::after{
+                        &::before{
+                            transition: all 0.5s;
                             position: absolute;
                             content: '';
                             display: block;
-                            width: 10px;
-                            height: 100%;
+                            width: 0%;
+                            height: 15px;
                             background-color: $red;
                             top: 0;
                             right: 0;
-                            z-index: 3;
+                        }
+                        &::after{
+                            transition: all 0.5s;
+                            position: absolute;
+                            content: '';
+                            display: block;
+                            width: 15px;
+                            height: 0%;
+                            background-color: $red;
+                            top: 0;
+                            right: 0;
                         }
                     }
                     .texts{
-                        width:calc(100% - 20px);
-                        height: 320px;
-                        background-color: rgba(255, 255, 255, 0.842);
+                        transition: all 0.5s;
+                        width:calc(100% - 30px);
+                        height: 310px;
+                        background-color: rgba(255, 255, 255, 0);
                         padding: 120px 20px;
                         position: absolute;
                         z-index: -1;
@@ -979,7 +1026,7 @@ ul.nav{
                             text-align: center;
                             font-size: 48px;
                             font-family: 'xc';
-                            color: $red;
+                            color: rgba(255, 255, 255, 0);
                             &:nth-child(2){
                                 line-height: 40px;
                                 font-size: 24px;
@@ -988,23 +1035,25 @@ ul.nav{
                         }
                     }
                     &::before{
+                        transition: all 0.5s;
                         position: absolute;
                         content: '';
                         display: block;
-                        width: 100%;
-                        height: 10px;
+                        width: 15px;
+                        height: 0%;
                         background-color: $red;
                         bottom: 0;
                         left: 0;
                     }
                     &::after{
+                        transition: all 0.5s;
                         position: absolute;
                         content: '';
                         display: block;
-                        width: 10px;
-                        height: 100%;
+                        width: 0%;
+                        height: 15px;
                         background-color: $red;
-                        top: 0;
+                        bottom: 0;
                         left: 0;
                     }
                 }
@@ -1185,7 +1234,7 @@ ul.nav{
                 display: flex;
                 justify-content: space-between;
                 padding-right: 20%;
-                li{}
+                
             }
             h4{
                 line-height: 20px;

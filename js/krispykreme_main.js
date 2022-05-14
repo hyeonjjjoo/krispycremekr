@@ -41,8 +41,9 @@ $(function(){
         li.removeClass('on');
         $(this).addClass('on');
         artGroup.removeClass('on');
-        artGroup.css({marginLeft: '0%'});
         artGroup.eq(ind).addClass('on');
+        artGroup.css({marginLeft: '0%'});
+        i = 0;
     });
     btnRight.click(function(){
         var j = $('.artGroup.on').find('article').length;
@@ -128,18 +129,20 @@ $(function(){
     
     // 컨텐츠3
     var artT = $('.cnt03 .artTop');
-    var art = $('.cnt03 article')
+    var art = $('.cnt03 article');
     art.click(function(){
         var ind = $(this).index();
         var img = $(this).find('.image').attr('data-img');
         artT.css({
-            animationName: 'shake'
+                animationName: 'shake' 
         });
-        $(this).mousemove(function(){
+        $(this).mouseleave(function(){
             artT.css({
-                animationName: 'none'
+                animationName: 'none' 
             });
         });
+    
+
         art.removeClass('on');
         $(this).addClass('on');
         artT.find('.image').css({
@@ -150,7 +153,7 @@ $(function(){
         },400);
         
     });
-
+    
     
 
 
