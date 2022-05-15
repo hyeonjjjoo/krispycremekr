@@ -148,83 +148,11 @@ ul.nav{
     }
 }
 
-// 헤더
-.hdrWrap{
-    border-top: 10px solid $gr;
-    header{
-        @include grid('pc');
-        padding: 20px 0px;
-        display: flex;
-        justify-content: space-between;
-        .hdrLeft{
-            width: calc(100% / 12 * 5);
-            display: flex;
-            .image{
-                width: calc(100% / 5 * 3);
-                height: 60px;
-                @include bg;
-                text-indent: -9999px;     
-                background-image: url('../images/logo.png');
-                cursor: pointer;
-            }
-            .btn{
-                background-color: $red;
-                color: #fff;
-                border-radius: 30px;
-                width: calc(100% / 5 * 1.6);
-                height: 50px;
-                padding: 6px 14px;
-                display: flex;
-                justify-content: space-between;
-                margin-top: 5px;
-                cursor: pointer;
-                .icon{
-                    text-indent: -9999px;
-                    width: 40px;
-                    height: 40px;
-                    @include bg;
-                    background-image: url('../images/hdr01.png');
-                }
-                .texts{ 
-                    span{
-                        font-weight: 700;
-                        display: block;
-                        &:nth-child(2){
-                            font-size: 18px;
-                        }
-                    }
-                }
-            }
-        }
-        nav{
-            display: flex;
-            width: calc(100% / 12 * 4.5);
-            h4{
-                font-size: #{'min(1.8em , 18px)'};
-                line-height: 60px;
-                font-family: 'xc';
-                color: $gr;
-                font-family: 'gmB';
-                margin-left: 11%;
-                cursor: pointer;
-            }
-            .icon{
-                text-indent: -9999px;
-                width: 41px;
-                height: 38px;
-                margin-left: 9px;
-                margin-top: 10px;
-                @include bg;
-                background-image: url('../images/doughnut-marker.svg');
-            }
-        }
-    }
-}
-
 // 메인
 .mainWrap{
     position: relative;
     overflow: hidden;
+    margin-top: 110px;
     .Mbnr{
         position: absolute;
         height: 200px;
@@ -258,12 +186,10 @@ ul.nav{
     }
     main{
         position: relative;
-        // height: #{'min(15rem , 600px)'};
         height: 600px;
         overflow: hidden;  
         .artGroup{
             article{
-                // height: #{'min(15rem , 600px)'};
                 height: 600px;
                 @include bgv;
                 background-image: url(../images/mnbg01.jpg);
@@ -1277,70 +1203,5 @@ ul.nav{
         font-family: 'jal';
         color: $red;
         white-space : nowrap;
-    }
-}
-
-// 푸터
-.ftrWrap{
-    background-color: #292929;
-    margin-top: 80px;
-    .footer{
-        @include grid('pc');
-        color: #fff;
-        display: flex;
-        justify-content: space-between;
-        padding: 60px 0px;
-        .ftrLeft{
-            width: calc(100% / 12 * 2.2);
-            @include bg;
-            background-image: url('../images/logo2.png');
-        }
-        .ftrMid{
-            width: calc(100% / 12 * 5);
-            ul{                 
-                display: flex;
-                justify-content: space-between;
-                padding-right: 20%;
-                li{
-                    cursor: pointer;
-                }
-            }
-            h4{
-                line-height: 20px;
-                &:nth-child(2){
-                    margin-top: 20px;
-                }
-            }
-        }
-        .ftrRight{
-            width: calc(100% / 12 * 3);
-            select{
-                text-align: center;
-                width: 100%;
-                height: 40px;
-                background-color: #292929;
-                color: #fff;
-                border-radius: 30px;
-                font-size: 17px;
-                cursor: pointer;
-            }
-            .sns{
-                text-align: center;
-                margin-top: 20px;
-                span{
-                    font-family: 'xc';
-                    font-size: 30px;
-                    line-height: 40px;
-                }
-            }
-        }
-        
-    }
-    .ftrBtm{
-        max-width: inherit;
-        text-align: center;
-        line-height: 60px;
-        background-color: #000;
-        color: #fff;
     }
 }

@@ -92,7 +92,8 @@ $(function(){
     
     $(window).scroll(function(){
         var now = $(this).scrollTop();
-        if(now>=700){
+        console.log(now)
+        if(now>=600){
             nav.fadeIn(200);
         }else{
             nav.fadeOut(200);
