@@ -1,35 +1,27 @@
 $(function(){
+    // 메인
     var btn = $('.mainWrap .btnDn');
-    $('.rightGroup').css({
-        // marginTop:'-1560px'
-    });
-    $('.leftGroup').css({
-        // marginTop:'-1520px'
+    var gr = $('.mainWrap .artGroup');
+    var q = 0;
+    gr.find('article').last().prependTo(gr);
+    gr.css({
+        marginTop:'-600px'
     });
     btn.click(function(){
-        $('.rightGroup').animate({
-            marginTop: '-780px',
-       
+        q++
+        gr.find('article:eq(1)').find('.images').css('animation-name','mnout')
+        gr.animate({
+            marginTop: '0px',
         },500,function(){
-            $('.rightGroup').find('.images').first().appendTo('.rightGroup');
-            $('.rightGroup').css({
-                marginTop : '-1560px'
-            });
-            
+            gr.find('article:eq(0)').find('.images').css('animation-name','mnin');
+            gr.find('article').last().prependTo(gr);
+            gr.css({
+                marginTop : '-600px'
+            });           
         });
-
-        $('.leftGroup').animate({
-            marginTop: '-760px',
-       
-        },500,function(){
-            $('.leftGroup').find('.image').first().appendTo('.leftGroup');
-            $('.leftGroup').css({
-                marginTop : '-1520px'
-            });
-            
-        });
+        $('.count').find('span').text((q%3)+1);
     });
-   
+
     // 컨텐츠1
     var li = $('.cnt01 li')
     var artGroup = $('.cnt01 .artGroup')

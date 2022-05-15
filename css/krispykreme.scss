@@ -79,7 +79,6 @@ ul.nav{
                     background-color: $red;
                 }
             } 
-                
             h4{
                 font-family: 'xc';
                 text-align: center;
@@ -160,13 +159,13 @@ ul.nav{
         .hdrLeft{
             width: calc(100% / 12 * 5);
             display: flex;
-            justify-content: space-between;
             .image{
                 width: calc(100% / 5 * 3);
                 height: 60px;
                 @include bg;
                 text-indent: -9999px;     
                 background-image: url('../images/logo.png');
+                cursor: pointer;
             }
             .btn{
                 background-color: $red;
@@ -177,6 +176,8 @@ ul.nav{
                 padding: 6px 14px;
                 display: flex;
                 justify-content: space-between;
+                margin-top: 5px;
+                cursor: pointer;
                 .icon{
                     text-indent: -9999px;
                     width: 40px;
@@ -184,8 +185,7 @@ ul.nav{
                     @include bg;
                     background-image: url('../images/hdr01.png');
                 }
-                .texts{
-                    
+                .texts{ 
                     span{
                         font-weight: 700;
                         display: block;
@@ -198,19 +198,22 @@ ul.nav{
         }
         nav{
             display: flex;
-            justify-content: space-between;
-            width: calc(100% / 12 * 5);
+            width: calc(100% / 12 * 4.5);
             h4{
-                font-size: 18px;
-                line-height: 50px;
+                font-size: #{'min(1.8em , 18px)'};
+                line-height: 60px;
                 font-family: 'xc';
                 color: $gr;
                 font-family: 'gmB';
+                margin-left: 11%;
+                cursor: pointer;
             }
             .icon{
                 text-indent: -9999px;
-                width: 40px;
-                height: 40px;
+                width: 41px;
+                height: 38px;
+                margin-left: 9px;
+                margin-top: 10px;
                 @include bg;
                 background-image: url('../images/doughnut-marker.svg');
             }
@@ -220,8 +223,6 @@ ul.nav{
 
 // 메인
 .mainWrap{
-    border-top: 10px solid $yl;
-    margin-top: 10px;
     position: relative;
     overflow: hidden;
     .Mbnr{
@@ -234,8 +235,9 @@ ul.nav{
         animation-duration: 1.8s;
         animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
         animation-iteration-count: infinite;
-
-        right: 20%;
+        right: 12%;
+        z-index: 5;
+        cursor: pointer;
     }
     @keyframes move {
         0%{
@@ -254,155 +256,208 @@ ul.nav{
             top: -20px;
         }
     }
-    
-    .ovrGrid{
-        position: absolute;
-        width: 100%;
-        top: 0;
-        left: 0;
-        margin-top: 10px;
-        height: 22rem;
-        max-height: 880px;
-        background-color: $gr;
-        overflow: hidden;
-        z-index: -1;
-        text-indent: -9999px;
-        &::after{
-            position: absolute;
-            top: -40px;
-            left: -17%;
-            width: 100%;
-            clip-path: circle(50% at 50% 50%);
-            height: 32rem;
-            max-height: 1280px;
-            background-color: $yl;
-            content: '';
-            display: inline-block;
-        }
-    }
     main{
-        @include grid('pc');
-        height: 880px;
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 10px;
-        .leftView{
-            width: calc(100% / 12 * 4);
-            overflow: hidden;
-            height: 48rem;
-            max-height: 720px;
-            .leftGroup{
-                .image{
-                    height: 48rem;
-                    max-height: 720px;
-                    @include bg;
-                    @for $img from 1 through 3{
-                        &.i#{$img}{
-                            background-image: url('../images/m_mainleft_pic01.png');
-                        }
+        position: relative;
+        // height: #{'min(15rem , 600px)'};
+        height: 600px;
+        overflow: hidden;  
+        .artGroup{
+            article{
+                // height: #{'min(15rem , 600px)'};
+                height: 600px;
+                @include bgv;
+                background-image: url(../images/mnbg01.jpg);
+                @for $img from 1 through 3{
+                    &.i#{$img}{
+                        background-image: url(../images/mnbg0#{$img}.jpg);
                     }
                 }
-            }
-        }
-        .rightView{
-            width: calc(100% / 12 * 7);
-            height: 780px;
-            margin-left: calc(100% / 12);
-            overflow: hidden;
-            .rightGroup{
-                transform: rotate(0deg);
-                transform-origin: 50% 100%;
-                // animation-name: swing;
-                // animation-timing-function: linear;
-                // @keyframes swing {
-                //     0%{
-                //         transform: rotate(90deg);
-                //     }
-                //     100%{
-                //         transform: rotate(0deg);
-                //     }
-                // }
-                .images{
-                    margin: 20px;
-                    .image{
+                &.i1{
+                    .img{
+                        .images{
+                            animation-name: mnin;
+                        }
+                        .image:nth-child(2){
+                            margin-right: 7%;
+                        }
+
+                    }
+                } 
+                .img{
+                    @include grid('pc');
+                    display: flex;
+                    justify-content: space-between;
+                    position: relative;
+                    .images{
+                        width: 50%;
+                        position: absolute;
+                        animation-duration: 0.5s;
+                        animation-iteration-count: unset;
+                        animation-fill-mode: forwards;
+                        animation-timing-function: ease-out;
+                        left : -55%;
+                        opacity: 0;
+                        @keyframes mnin {
+                            0%{
+                                left : -55%;
+                                opacity: 0;
+                            }
+                            100%{
+                                left : 0%;
+                                opacity: 1;
+                            }
+                        }
+                        @keyframes mnout {
+                            0%{
+                                left : 0%;
+                                opacity: 1;
+                            }
+                            100%{
+                                left : -55%;
+                                opacity: 0;
+                            }
+                        }
+                        .image{
+                            width: 100%;
+                            height: #{'min(33rem , 500px)'};
+                            @include bg;
+                            @for $img from 1 through 3{
+                                &.i#{$img}{
+                                    background-image: url('../images/m_mainleft_pic0#{$img}.png');
+                                }
+                            }
+                        }
+                        .btn{
+                            width: calc(100% / 7 * 3);
+                            margin: 0 auto;
+                            font-family: 'NsR';
+                            border: 2.5px solid white;
+                            background-color: #00704a;
+                            border-radius: 30px;
+                            font-size: 21px;
+                            line-height: 53px;
+                            height: 53px;
+                            color: #fff;
+                            position: relative;
+                            padding-left: 30px;
+                            cursor: pointer;
+                            transition: all 0.5s;
+                            &:hover{
+                                background-color: #fff;
+                                color: #00704a;
+                                &::after{
+                                    background-color: #00704a;
+                                    color: #fff;
+                                }
+                            }
+                            &::after{
+                                content: '';
+                                text-align: center;
+                                display: inline-block;
+                                font-family: 'xc';
+                                background-color: #fff;
+                                color: #00704a;
+                                font-weight: 700;
+                                width: 38px;
+                                height: 38px;
+                                line-height: 40px;
+                                font-size: 28px;
+                                border-radius: 50%;
+                                position: absolute;
+                                right: 10px;
+                                top: 0;
+                                bottom: 0;
+                                margin: auto;
+                            }
+                        }
+                    }
+                    .image:nth-child(2){
+                        width: 40%;
+                        height: 500px;
+                        margin-left: auto;
                         @include bg;
                         @for $img from 1 through 3{
                             &.i#{$img}{
-                                background-image: url('../images/m_mainright_pic0#{$img}.png');
+                                background-image: url('../images/mnright0#{$img}.png');
                             }
                         }
-                        &.i1{
-                            height: 120px;
-                            margin-top: 80px;
-                        }
-                        &.i2{
-                            height: 460px;
-                            margin-top: 40px;
-                        }
-                    }
-                    .btn{
-                        width: calc(100% / 7 * 3);
-                        margin-left: calc(100% / 7 * 3);
-                        font-family: 'NsR';
-                        border: 2.5px solid white;
-                        background-color: #00704a;
-                        border-radius: 30px;
-                        font-size: 25px;
-                        line-height: 60px;
-                        height: 60px;
-                        color: #fff;
-                        position: relative;
-                        padding-left: 30px;
-                        cursor: pointer;
-                        &::after{
-                            content: '';
-                            text-align: center;
-                            display: inline-block;
-                            font-family: 'xc';
-                            background-color: #fff;
-                            color: #00704a;
-                            font-weight: 700;
-                            width: 42px;
-                            height: 42px;
-                            line-height: 46px;
-                            font-size: 35px;
-                            border-radius: 50%;
-                            position: absolute;
-                            right: 10px;
-                            top: 0;
-                            bottom: 0;
-                            margin: auto;
+                        animation-name: mv;
+                        animation-timing-function: ease-in-out;
+                        animation-duration: 1.6s;
+                        animation-iteration-count: infinite;
+    
+                        @keyframes mv {
+                            0%{
+                                transform: translate(0% , 0%);
+                            }
+                            50%{
+                                transform: translate(0% , 5%);
+                            }
+                            100%{
+                                transform: translate(0% , 0%);
+                            }
                         }
                     }
                 }
             }
         }
-        .paging{
-            width: calc(100% / 12 * 5);
-            display: flex;
-            padding-left: calc(100% / 12 * 1.2);
-            li{
-                width: 16px;
-                height: 16px;
-                border-radius: 8px;
-                background-color: $grey;
-                margin: 5px;
-                &.on{
-                    background-color: $gr;
-                    width: 30px;
+        .count{
+            position: absolute;
+            bottom: 44px;
+            width: 66px;
+            height: 55px;
+            right: 0;
+            left: 0;
+            margin: auto;
+            &::after{
+                display: block;
+                content: '';
+                width: 130%;
+                height: 1px;
+                transform-origin: top left;
+                transform: rotateZ(319deg);
+                background-color: #777;
+            }
+            h4{
+                font-size: 25px;
+                font-weight: 700;
+                font-family: 'gmB';
+                color: #000;
+                line-height: 27px;
+                &:nth-child(2){
+                    font-weight: 100;
+                    text-align: right;
+                    font-family: 'gmM';
+                    color: #777;
+                    font-size: 20px;
+                    
                 }
             }
+
         }
         .btnDn{
+            position: absolute;
             transform: rotate(90deg);
-            width: calc(100% / 12 );
+            width: 70px;
             font-family: 'xeicon';
             font-size: 65px;
             color: $red;
             font-weight: 700;
             letter-spacing: -45px;
-            margin-top: -40px;
             cursor: pointer;
+            bottom: 41px;
+            right: 27%;
+            margin: auto;
+            span{
+                animation-duration: 1.5s;
+                animation-timing-function: ease-in-out;
+                animation-iteration-count: infinite;
+                animation-name: light2;
+                &:nth-child(2){
+                    animation-name: light;
+                }
+
+            }
         }
     }
 }
@@ -465,7 +520,7 @@ ul.nav{
                     margin-top: 20px;
                     li{
                         width: 25%;
-                        font-size: 14px;
+                        font-size: #{'min(14px,1.4em)'};
                         line-height: 40px;
                         position: relative;
                         margin: 0px 10px;
@@ -483,8 +538,11 @@ ul.nav{
                                 border-radius: 50%;
                                 background-color: #ffe841;
                                 position: absolute;
-                                top: -22%;
-                                left: 12%;
+                                top: 0;
+                                left: 0;
+                                bottom: 0;
+                                right: 0;
+                                margin: auto;                            
                                 z-index: -1;
                             }
                         }
@@ -497,8 +555,11 @@ ul.nav{
                                 border-radius: 50%;
                                 background-color: #ffe841;
                                 position: absolute;
-                                top: -22%;
-                                left: 12%;
+                                top: 0;
+                                left: 0;
+                                bottom: 0;
+                                right: 0;
+                                margin: auto;                            
                                 z-index: -1;
                             }
                             
@@ -544,6 +605,7 @@ ul.nav{
                     &.on{
                         display: flex;
                     }
+                    // 아티클 공통부분
                     article{
                         width: calc(100% / 4 - 10px);
                         margin: 0px 5px;
@@ -560,7 +622,7 @@ ul.nav{
                             }
                         }
                         .image{
-                            height: 310px;
+                            height: #{'min(8rem , 320px)'};
                             position: relative;
                             @include bg;
                             background-position: bottom;
@@ -575,7 +637,7 @@ ul.nav{
                                 content: '';
                                 display: block;
                                 width: 100%;
-                                height: 260px;
+                                height: #{'min(6.5rem , 260px)'};
                                 border-top-left-radius: 130px;
                                 border-top-Right-radius: 130px;
                                 background-color: $pc;
@@ -589,7 +651,7 @@ ul.nav{
                                 background-color: $pk;
                                 font-family: 'gmM';
                                 padding: 10px 20px;
-                                font-size: 22px;
+                                font-size: #{'min(2.2em , 22px)'};
                                 color: #3c2121;
                                 border: 2.3px solid #3c2121;
                                 position: relative;
@@ -683,7 +745,7 @@ ul.nav{
                             text-shadow: 0px 0px 0px $red;
                         }
                         50%{
-                            text-shadow: 0px 0px 4px $red;
+                            text-shadow: 0px 0px 8px $red;
                         }
                         100%{
                             text-shadow: 0px 0px 0px $red;
@@ -691,13 +753,13 @@ ul.nav{
                     }
                     @keyframes light2 {
                         100%{
-                            text-shadow: 0px 0px 4px $red;
+                            text-shadow: 0px 0px 8px $red;
                         }
                         50%{
                             text-shadow: 0px 0px 0px $red;
                         }
                         0%{
-                            text-shadow: 0px 0px 4px $red;
+                            text-shadow: 0px 0px 8px $red;
                         }
                     }
                 }
@@ -706,6 +768,11 @@ ul.nav{
         // 컨텐츠2
         &.cnt02{
             width: 100%;
+            header{
+                width: 80%;
+                max-width: 1080px;
+                margin: 0 auto;
+            }
             section{
                 width: 100%;
                 max-width: inherit;
@@ -874,7 +941,7 @@ ul.nav{
                                         margin-top: 20px;
                                     }
                                     .btn{
-                                        font-size: 18px;
+                                        font-size: #{'min(1.8em, 18px)'};
                                         font-family: 'NsR';
                                         background-color: $red;
                                         color: #fff;
@@ -917,7 +984,7 @@ ul.nav{
                         }
                         .image{
                             transition: all 0.2s;
-                            height: 240px;
+                            height: #{'min(6rem, 240px)'};
                             border-radius: 20px;
                             box-shadow: -4px -4px 9px #c9c9c9 inset;
                             @include bg;
@@ -948,7 +1015,7 @@ ul.nav{
                 justify-content: space-between;
                 article{
                     width: calc(100% / 3);
-                    height: 340px;
+                    height: #{'min(8.5rem, 340px)'};
                     margin: 0px 5px;
                     position: relative;
                     cursor: pointer;
@@ -975,7 +1042,7 @@ ul.nav{
                         }
                     }
                     .image{
-                        height: 340px;
+                        height: #{'min(8.5rem, 340px)'};
                         position: relative;
                         z-index: -1;
                         @include bgv;
@@ -1088,13 +1155,13 @@ ul.nav{
             direction: rtl;
             h2{
                 line-height: 60px;
-                font-size: 40px;
+                font-size: #{'min(40px, 4em)'};
                 font-family: 'jal';
                 color: #fff;
 
             }
             .btn{
-                font-size: 18px;
+                font-size: #{'min(1.8em, 18px)'};
                 font-family: 'NsR';
                 background-color: $iv;
                 color: $red;
@@ -1137,28 +1204,28 @@ ul.nav{
         .images{
             width: 40%;
             position: absolute;
-            right : 250px;
+            right : 10%;
             animation-duration: 0.5s;
             animation-iteration-count: unset;
             animation-fill-mode: forwards;
             animation-timing-function: ease-out;
             @keyframes in {
                 0%{
-                    right : -200px;
+                    right : -10%;
                     opacity: 0;
                 }
                 100%{
-                    right : 250px;
+                    right : 10%;
                     opacity: 1;
                 }
             }
             @keyframes out {
                 0%{
-                    right : 250px;
+                    right : 10%;
                     opacity: 1;
                 }
                 100%{
-                    right : -200px;
+                    right : -10%;
                     opacity: 0;
                 }
             }
@@ -1194,7 +1261,7 @@ ul.nav{
                 }
                 &.i3{
                     width: 110%;
-                    height: 400px;
+                    height: #{'min(10rem, 400px)'};
                     background-image: url('../images/bnr1.png');
 
                 }
@@ -1234,7 +1301,9 @@ ul.nav{
                 display: flex;
                 justify-content: space-between;
                 padding-right: 20%;
-                
+                li{
+                    cursor: pointer;
+                }
             }
             h4{
                 line-height: 20px;
@@ -1253,6 +1322,7 @@ ul.nav{
                 color: #fff;
                 border-radius: 30px;
                 font-size: 17px;
+                cursor: pointer;
             }
             .sns{
                 text-align: center;
