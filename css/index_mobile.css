@@ -1,0 +1,254 @@
+html{
+    font-size: 9.5vw;
+}
+body{
+    font-size: 2.3vw;
+}
+
+/* 메인 */
+.mainWrap main{
+    height: 280px;
+}
+.mainWrap main .btnDn{
+    font-size: 64px;
+    bottom: 20px;
+    right: 18%;
+}
+.mainWrap main .artGroup{
+    margin-top: -280px;
+}
+.mainWrap main .artGroup article{
+    height: 280px;
+}
+.mainWrap main .artGroup article .img{
+    width: 80%;
+    height: 280px;
+}
+.mainWrap main .artGroup article .img .images{
+    height: 280px;
+}
+.mainWrap main .artGroup article .img .images .btn{
+    width: 65%;
+    font-size: min(1.5em, 15px);
+    line-height: 40px;
+    height: 40px;
+    text-align: center;
+    padding: 0px 10px;
+}
+.mainWrap main .artGroup article .img .images .btn::after{
+    display: none;
+}
+.mainWrap main .count{
+    width: 51px;
+    height: 17px;
+}
+.mainWrap main .count h4{
+    font-size: 17px;
+    line-height: 20px;
+}
+.mainWrap main .count h4:nth-child(2){
+    font-size: 16px;
+}
+
+/* 컨텐츠 */
+.cntWrap .content{
+    width: 80%;
+}
+.cntWrap .content section{
+    margin-top: 30px;
+}
+.cntWrap .content header h2{
+    font-size: 27px;
+}
+.cntWrap .content header h2::after{
+    width: 20%;
+}
+.cntWrap .content.cnt01 header .tab{
+    margin-left: 5.5rem;
+    width: 80%;
+    margin: 0 auto;
+}
+.cntWrap .content.cnt01 header .tab li{
+    line-height: 60px;
+    font-size: min(14px,1.4em);
+}
+.cntWrap .content.cnt01 header .tab li.on::before{
+    left: -8px;
+}
+
+/* 켄텐츠1 */
+.cntWrap .content.cnt01 section .artGroup{
+    width: 300%;
+}
+.cntWrap .content.cnt01 section .artGroup:nth-child(2){
+    width: 600%;
+}
+.cntWrap .content.cnt01 section .artGroup:nth-child(3) {
+    width: 450%;
+}
+.cntWrap .content.cnt01 section .artGroup:nth-child(4) {
+    width: 250%;
+}
+.cntWrap .content.cnt02 section .artGroup article .texts p{
+    display: none;
+}
+.cntWrap .content.cnt01 section .artGroup article .image{
+    height: min(4.5rem , 180px);
+}
+.cntWrap .content.cnt01 section .artGroup article .texts h3{
+    font-size: min(1.4em , 14px);
+    padding: 10px 9px;
+}
+.cntWrap .content.cnt01 section .artGroup article .image::before{
+    height: min(3.5rem , 140px);
+}
+.cntWrap .content.cnt01 section {
+    margin-top: 0px;
+}
+.cntWrap .content.cnt01 section .btns{
+    width: calc(100% / 4 * 3.5);
+}
+.cntWrap .content.cnt01 section .btns .btn{
+    font-size: min(1.6em, 16px);
+    line-height: 40px;
+    height: 40px;
+}
+.cntWrap .content.cnt01 .dirBtn{
+    top: 220px;
+    width: 110%;
+    left: -2%;
+}
+.cntWrap .content.cnt01 .dirBtn .btn{
+    font-size: 45px;
+}
+.cntWrap .content.cnt01 .dirBtn .btn span{
+    margin: 0px -27px;
+}
+.cntWrap .content header .hdrBtm h4 {
+    font-size: 12px;
+}
+
+/* 컨텐츠2 */
+.cntWrap .content.cnt02 header{
+    width: 80%;
+}
+.cntWrap .content.cnt02 section .artGroup article .video{
+    height: 210px;
+}
+.cntWrap .content.cnt02 section .artGroup article .texts h3 {
+    font-size: 23px;
+    line-height: 27px;
+}
+.cntWrap .content.cnt02 section .artGroup article .texts .btn{
+    width: 90%;
+    font-size: min(1.5em, 15px);
+    line-height: 40px;
+    height: 40px;
+}
+.cntWrap .content.cnt02 section .btns{
+    height: 60px;
+}
+.cntWrap .content.cnt02 section .btns .btn{
+    height: 50px;
+    width: 50px;
+}
+
+/* 배너1 */
+.bnrWrap:nth-child(5){
+    margin-top: 10px;
+}
+.bnrWrap .bnr01 .ovrGrid{
+    height: 160px;
+}
+.bnrWrap .bnr01 .texts {
+    padding: 20px 0px;
+}
+.bnrWrap .bnr01 .texts h2 {
+    line-height: 25px;
+    font-size: min(15px, 1.5em);
+}
+.bnrWrap .bnr01 .texts .btn{
+    height: 35px;
+    width: 90%;
+    margin-top: 10px;
+    line-height: 35px;
+    font-size: min(1.3em, 13px);
+    padding-right: 33px;
+}
+.bnrWrap .bnr01 .texts .btn::after{
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 18px;
+}
+.bnrWrap .bnr01 .images .image.i3{
+    height: min(3.5rem, 140px);
+}
+.bnrWrap .bnr01 .images .image.i2{
+    height: 55px;
+}
+.bnrWrap .bnr01 .images .image.i1{
+    height: 200px;
+}
+/* 컨텐츠3 */
+.cntWrap:nth-child(7) {
+    margin-top: 10px;
+}
+.cntWrap .content.cnt03 section .artTop article .image{
+    height: 140px
+}
+.cntWrap .content.cnt03 section .artTop article .texts{
+    height: 140px;
+    padding: 20px 5px 50px;
+}
+.cntWrap .content.cnt03 section .artTop article .texts .txtGroup .txt{
+    height: 140px
+}
+.cntWrap .content.cnt03 section .artTop article .texts .txtGroup .txt h3{
+    line-height: 20px;
+    font-size: 14px;
+}
+.cntWrap .content.cnt03 section .artTop article .texts .txtGroup .txt p{
+    display: none;
+}
+.cntWrap .content.cnt03 section .artTop article .texts .txtGroup .txt .btn{
+    width: calc(100% / 4 * 2.5);
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    font-size: min(1.5em, 15px);
+}
+.cntWrap .content.cnt03 section .artTop article .texts .txtGroup .txt .btn span{
+    display: none;
+}
+.cntWrap .content.cnt03 section .artBtm{
+    margin-top: 20px;
+}
+.cntWrap .content.cnt03 section .artBtm article{
+    margin: 0 5px;
+}
+.cntWrap .content.cnt03 section .artBtm article .image{
+    height: min(2rem, 80px);
+}
+.cntWrap .content.cnt03 section .artBtm article .image span{
+    line-height: 35px;
+    font-size: 12px;
+}
+
+/* 컨텐츠4 */
+.cntWrap .content.cnt04 section article .image {
+    height: min(3rem, 120px);
+}
+.cntWrap .content.cnt04 section article{
+    height: min(3rem, 120px);
+}
+.cntWrap .content.cnt04 section article .texts{
+    height: min(2.25rem, 90px);
+    padding: min(3em, 30px) 5px;
+}
+.cntWrap .content.cnt04 section article .texts h4{
+    font-size: min(3em, 30px);
+}
+.cntWrap .content.cnt04 section article .texts h4:nth-child(2){
+    display: none;
+}

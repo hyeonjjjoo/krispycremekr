@@ -45,7 +45,7 @@ $grey: #7d7d7d;
 
 @mixin grid ($dev){
     @if($dev=='mov'){
-        width: 90%;
+        width: 80%;
     }
     @else if($dev=='tab'){
         width: 90%;
@@ -84,7 +84,6 @@ ul.nav{
                 text-align: center;
                 font-size: 30px;
                 transition: all 0.3s;
-
             }
         }
         &:nth-child(1)~li{
@@ -117,16 +116,14 @@ ul.nav{
                 width: 2.5px;
                 height: 16px;
                 margin: 0 auto;
-                margin-top: -21px;
-                
+                margin-top: -21px;  
             }
             @include bgv();
             @for $img from 1 through 5{
                 &.i#{$img}{
                     background-image: url('../images/icon0#{$img}.png');
                 }
-            }
-            
+            } 
         }
         h4{
             height: 50px;
@@ -143,7 +140,6 @@ ul.nav{
             span{
                 display: none;
             }
-
         }
     }
 }
@@ -189,6 +185,7 @@ ul.nav{
         height: 600px;
         overflow: hidden;  
         .artGroup{
+            margin-top: -600px;
             article{
                 height: 600px;
                 @include bgv;
@@ -260,7 +257,7 @@ ul.nav{
                             border: 2.5px solid white;
                             background-color: #00704a;
                             border-radius: 30px;
-                            font-size: 21px;
+                            font-size: #{'min(2.1em, 21px)'};
                             line-height: 53px;
                             height: 53px;
                             color: #fff;
@@ -615,7 +612,7 @@ ul.nav{
                     .btn{
                         width: 50%;
                         margin: 0px 10px;
-                        font-size: 18px;
+                        font-size: #{'min(1.8em, 18px)'};
                         font-family: 'NsR';
                         border: 2.5px solid $red;
                         background-color: $iv;
@@ -735,7 +732,7 @@ ul.nav{
                                 margin-top: 20px;
                             }
                             .btn{
-                                font-size: 18px;
+                                font-size: #{'min(1.8em, 18px)'};
                                 font-family: 'NsR';
                                 border: 2.5px solid $red;
                                 background-color: $iv;
@@ -1003,11 +1000,12 @@ ul.nav{
                         }
                     }
                     .texts{
+                        background-color: #000;
                         transition: all 0.5s;
                         width:calc(100% - 30px);
-                        height: 310px;
+                        height: #{'min(7.7rem, 310px)'};
                         background-color: rgba(255, 255, 255, 0);
-                        padding: 120px 20px;
+                        padding: #{'min(3rem, 120px)'} #{'min(0.5rem, 20px)'};
                         position: absolute;
                         z-index: -1;
                         top: 0;
@@ -1017,12 +1015,12 @@ ul.nav{
                         margin: auto;
                         h4{
                             text-align: center;
-                            font-size: 48px;
+                            font-size: #{'min(4.8em, 48px)'};
                             font-family: 'xc';
                             color: rgba(255, 255, 255, 0);
                             &:nth-child(2){
                                 line-height: 40px;
-                                font-size: 24px;
+                                font-size: #{'min(2.4em, 24px)'};
                                 font-family: 'jal';
                             }
                         }
