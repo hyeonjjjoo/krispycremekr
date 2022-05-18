@@ -3,7 +3,7 @@ $(function(){
     $('.hdr').load('./inc/header.html',function(){
         var wd = $(window).width();
         if(wd > 1024){
-            $('nav').mouseover(function(){
+            $('.hdrWrap nav').mouseover(function(){
                 console.log('');
                 $('.hdrWrap').addClass('show');
                 $(this).mouseleave(function(){

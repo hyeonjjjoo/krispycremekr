@@ -81,9 +81,14 @@ body{
                 width: calc(100% / 5 * 3);
                 height: 60px;
                 @include bg;
-                text-indent: -9999px;     
                 background-image: url('../images/logo.png');
                 cursor: pointer;
+                a{
+                    color: transparent;
+                    width: 85%;
+                    height: 100%;
+                    display: block;  
+                }
             }
             .btn{
                 background-color: $red;

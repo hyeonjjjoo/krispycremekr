@@ -537,11 +537,11 @@ ul.nav{
                             .image.i#{$loc}::before{
                                 @include bgv;
                                 background-image: url('../images/bg#{$loc}.jpg');
-                            } 
-                        }
-                        .image::before{
-                                @include bgv;
-                                background-image: url('../images/bg7.png');
+                                } 
+                            }
+                            .image::before{
+                                    @include bgv;
+                                    background-image: url('../images/bg7.png');
                             }
                         }
                         .image{

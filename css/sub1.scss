@@ -1,0 +1,512 @@
+html{
+    font-size: 3vw;
+}
+body{
+    font-size: 0.7vw;
+    overflow-x: hidden;
+}
+
+$gr: #00704a;
+$yl: #ffdf4e;
+$pc: #ffcca3;
+$pk: #ffe7e7;
+$dpk: #ef6781;
+$br: #3c2121;
+$iv: #fff7e0;
+$red: #f51a2d;
+$grey: #7d7d7d;
+
+@mixin bg {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+@mixin bgv {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@mixin ff($fontname,$url){
+    @font-face {
+        font-family: '#{$fontname}';
+        src: url('./fonts/#{$url}');
+    }
+}
+
+@include ff(xc,'xeicon.ttf');
+@include ff(NsB,'NanumSquareB.ttf');
+@include ff(NsR,'NanumSquareR.ttf');
+@include ff(NsL,'NanumSquareL.ttf');
+@include ff(jal,'Jalnan.ttf');
+@include ff(gmB,'GmarketSansTTFBold.ttf');
+@include ff(gmM,'GmarketSansTTFMedium.ttf');
+@include ff(gmL,'GmarketSansTTFLight.ttf');
+
+.cntWrap{
+    margin-top: 150px;
+    .content{
+        width: 80%;
+        max-width: 1080px;
+        margin: 0 auto;
+        header{
+            nav{
+                ul{
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                    li{
+                        width: calc(100% / 6);
+                        font-family: 'NsB';
+                        border: 2.5px solid #999;
+                        border-top-left-radius: 10px;
+                        border-top-right-radius: 10px;
+                        font-size: 18px;
+                        height: 60px;
+                        margin-top: 20px;
+                        cursor: pointer;
+                        transition: all 0.3s;
+                        padding: 20px 0px;
+                        border-bottom: none;
+                        br{
+                            display: none;
+                        }
+                        &.on{
+                            padding: 25px 0px;
+                            margin-top: 0px;
+                            font-size: 24px;
+                            height: 80px;
+                            background-color: $yl;
+                            border: 3px solid $br;
+                            border-bottom: none;
+                        }
+                    }
+                }
+            }
+            .image{
+                font-size: 55px;
+                font-family: 'jal';
+                padding: 80px 0px;
+                line-height: 80px;
+                height: 240px;
+                width: 100%;
+                text-align: center;
+                color: #fff;
+                @include bgv();
+                background-image: url('../images/sub2/hdr.jpg');
+            }
+        }
+        section{
+            margin-top: 40px;
+            h4{
+                font-family: 'gmM';
+                font-size: 32px;
+                line-height: 40px;
+                text-align: center;
+            }
+            .artTop{
+                margin-top: 40px;
+                .artGroup{
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 40px;
+                    article{
+                        width: calc(100% / 12 * 3);
+                        margin: 0px 10px;
+                        &:hover{
+                            @for $loc from 1 through 6{
+                            .image.i#{$loc}::before{
+                                @include bgv;
+                                background-image: url('../images/bg#{$loc}.jpg');
+                                } 
+                            }
+                            .image::before{
+                                    @include bgv;
+                                    background-image: url('../images/bg7.png');
+                            }
+                        }
+                        .image{
+                            height: #{'min(8rem , 320px)'};
+                            position: relative;
+                            @include bg;
+                            background-position: bottom;
+                            @for $img from 1 through 3{
+                                &.i#{$img}{
+                                    background-image: url('../images/sub2/new_pic0#{$img}.png');
+                                }
+                            }
+                            &::before{
+                                transition: all 0.8s;
+                                position: absolute;
+                                content: '';
+                                display: block;
+                                width: 100%;
+                                height: #{'min(6.5rem , 260px)'};
+                                border-top-left-radius: 130px;
+                                border-top-Right-radius: 130px;
+                                background-color: $pc;
+                                z-index: -1;
+                            }
+                        }
+                        h3{
+                            margin: 0 auto;
+                            background-color: $pk;
+                            font-family: 'gmM';
+                            padding: 10px 20px;
+                            font-size: #{'min(2.2em , 22px)'};
+                            color: #3c2121;
+                            border: 2.3px solid $br;
+                            position: relative;
+                            width: max-content;
+                            &::after{
+                                content: '';
+                                display: block;
+                                position: absolute;
+                                background-color: $dpk;
+                                border: 2.3px solid $br;
+                                width: 100%;
+                                height: 100%;
+                                top: 6px;
+                                left: 6px;
+                                z-index: -1;
+                            }
+                        }
+                    }
+                }
+            }
+            .artBtm{
+                margin-top: 80px;
+                .artGroup{
+                    margin-top: 40px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    article{
+                        width: calc(100% / 12 * 3);
+                        text-align: center;
+                        &:hover{
+                            .image{
+                                &::before{ 
+                                    width: 100%;
+                                    height: #{'min(6.5rem , 260px)'};
+                                }
+                                @for $img from 1 through 4{
+                                    &.i#{$img}{
+                                        &::after{
+                                            opacity: 1;
+                                        }        
+                                    }
+                                }                 
+                            }
+                        }
+                        .image{
+                            height: #{'min(8rem , 320px)'};
+                            position: relative;
+                            @include bg;
+                            @for $img from 1 through 6{
+                                &.i#{$img}{
+                                    background-image: url('../images/sub2/new_pic0#{$img}.png');
+                                }
+                            }
+                            @for $img from 1 through 12{
+                                &.d#{$img}{
+                                    background-image: url('../images/sub2/pic0#{$img}.png');
+                                }
+                            }
+                            @for $img from 1 through 9{
+                                &.k#{$img}{
+                                    background-image: url('../images/sub2/drink0#{$img}.png');
+                                }
+                            }
+                            @for $img from 1 through 5{
+                                &.c#{$img}{
+                                    background-image: url('../images/sub2/ice0#{$img}.png');
+                                }
+                            }
+                            &::before{
+                                content: '';
+                                display: block;
+                                position: absolute;
+                                width: 0%;
+                                height: 0%;
+                                border-radius: 50%;
+                                background-color: #ffbfbf;
+                                z-index: -1;
+                                left: 0;
+                                right: 0;
+                                top: 0;
+                                bottom: 0;
+                                margin: auto;
+                                transition: all 0.3s;
+                            }
+                            &::after{
+                                content: '';
+                                display: block;
+                                position: absolute;
+                                opacity: 0;
+                                width: 60px;
+                                height: 60px;
+                                @include bg;
+                                background-image: url('../images/sub2/new.png');
+                                right: 0;
+                                top: 0;
+                                transition: opacity 0.5s;
+                            }            
+                        }
+                        h3{
+                            margin: 0 auto;
+                            background-color: $pk;
+                            font-family: 'gmM';
+                            padding: 10px 20px;
+                            font-size: #{'min(2.2em , 22px)'};
+                            color: #3c2121;
+                            border: 2.3px solid $br;
+                            position: relative;
+                            width: max-content;
+                            &::after{
+                                content: '';
+                                display: block;
+                                position: absolute;
+                                background-color: $dpk;
+                                border: 2.3px solid $br;
+                                width: 100%;
+                                height: 100%;
+                                top: 6px;
+                                left: 6px;
+                                z-index: -1;
+                            }
+                        }
+                        p{
+                            font-family: 'NsR';
+                            font-weight: 700;
+                            line-height: 20px;
+                            margin-top: 20px;
+                            font-size: 13px;
+                            color: #101010;
+                        }
+                    }
+                }
+            }
+        }
+        .dirBtn{
+            display: none;
+        }
+    }
+}
+@media (max-width : 1024px) and (min-width : 0){
+    html{
+        font-size: 5.1vw;
+    }
+    body{
+        font-size: 1.2vw;
+    }
+    p{
+        display: none;
+    }
+    .cntWrap{
+        .content{
+            width: 90%;
+            max-width: 700px;
+            header{
+                nav{
+                    ul{
+                        li{
+                            width: calc(100% / 5);
+                            font-size: #{'min(1.7em , 17px)'};
+                            &.on{
+                                font-size: #{'min(2em , 20px)'};
+                            }
+                        }
+                    }
+                }
+                .image{
+                    line-height: 160px;
+                    height: 160px;
+                    padding: 0;
+                    font-size: 35px;
+                }
+            }
+            section{
+                .artTop{
+                    .artGroup{
+                        article{
+                            .image{
+                                height: #{'min(5rem , 200px)'};
+                                &::before{
+                                    height: #{'min(4rem , 160px)'};
+                                }
+                            }
+                            h3{ 
+                                font-weight: 700;
+                                font-size: #{'min(1.7m , 17px)'};
+                                padding: 10px #{'min(1em , 10px)'}; 
+                            }
+                        }
+                    }
+                }
+                .artBtm{
+                    .artGroup{
+                        margin-top: 0;
+                        article{
+                            margin-top: 30px;
+                            &:hover{
+                                .image::before{
+                                    height : #{'min(4.25rem , 170px)'};
+                                }
+                            }
+                            .image{
+                                height: #{'min(5rem , 200px)'};
+                            }
+                            h3{
+                                font-weight: 700;
+                                font-size: #{'min(1.6em , 16px)'};
+                                padding: 10px #{'min(1em , 10px)'};
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    } 
+}
+@media (max-width : 420px) and (min-width : 0){
+    html{
+        font-size: 9.5vw;
+    }
+    body{
+        font-size: 2.3vw;
+    }
+    p{
+        display: none;
+    }
+    .cntWrap{
+        .content{
+            width: 90%;
+            position: relative;
+            header{
+                nav{
+                    ul{
+                        li{
+                            font-size: #{'min(1.2em , 12px)'};
+                            br{
+                                display: inline-block;
+                            }
+                            &.on{
+                                font-size: #{'min(1.4em , 14px)'};
+                            }
+                        }
+                    }
+                }
+                .image{
+                    line-height: 120px;
+                    height: 120px;
+                    font-size: 28px;
+                }
+            }
+            section{
+                h4{
+                    font-size: #{'min(2.5em , 25px)'};
+                }
+                .artTop{
+                    width: 65%;
+                    overflow: hidden;
+                    margin: 0 auto;
+                    padding-bottom: 10px;
+                    .artGroup{
+                        width: 300%;
+                        article{
+                            width: calc(100% / 3);
+                            .image{
+                                height: #{'min(6.5rem , 260px)'};
+                                &::before{
+                                    height: #{'min(5rem , 200px)'};
+                                }
+                                &::after{
+                                    opacity: 1;
+                                }
+                            }
+                            h3{ 
+                                font-size: #{'min(1.7em , 17px)'};
+                                padding: 10px #{'min(1.4em , 14px)'};      
+                            }
+                        }
+                    }
+                }
+                .artBtm{
+                    .artGroup{
+                        article{
+                            width: calc(100% / 2);
+                            margin-top: 30px;
+                            &:hover{
+                                .image::before{
+                                    height : #{'min(4.5rem , 180px)'};
+                                }
+                            }
+                            .image{
+                                height: #{'min(5rem , 200px)'};
+                                @for $img from 1 through 4{
+                                    &.i#{$img}{
+                                        &::after{
+                                            opacity: 1;
+                                        }        
+                                    }
+                                }     
+                            }
+                            h3{
+                                font-size: #{'min(1.7em , 17px)'};
+                                padding: 10px #{'min(1.4em , 14px)'};
+                            }
+                        }
+                    }
+                }
+            }
+            .dirBtn{
+                display: inline-block;
+                display: flex;
+                justify-content: space-between;
+                position: absolute;
+                top: 400px;
+                left: 3%;
+                width: 94%;
+                height: 0px;
+                .btn{
+                    font-size: 60px;
+                    font-family: 'xc';
+                    color: $red;
+                    span{
+                        margin: 0px -22px;
+                        font-weight: 700;
+                        animation-name: light;
+                        animation-duration: 1.5s;
+                        animation-timing-function: ease-in-out;
+                        animation-iteration-count: infinite;
+                        &:nth-child(2){
+                            animation-name: light2;
+                        }
+                        @keyframes light {
+                            0%{
+                                text-shadow: 0px 0px 0px $red;
+                            }
+                            50%{
+                                text-shadow: 0px 0px 8px $red;
+                            }
+                            100%{
+                                text-shadow: 0px 0px 0px $red;
+                            }
+                        }
+                        @keyframes light2 {
+                            100%{
+                                text-shadow: 0px 0px 8px $red;
+                            }
+                            50%{
+                                text-shadow: 0px 0px 0px $red;
+                            }
+                            0%{
+                                text-shadow: 0px 0px 8px $red;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    } 
+}
