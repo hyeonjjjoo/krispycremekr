@@ -1,0 +1,170 @@
+html{
+    font-size: 3vw;
+}
+body{
+    font-size: 0.7vw;
+    overflow-x: hidden;
+}
+
+$gr: #00704a;
+$yl: #ffdf4e;
+$pc: #ffcca3;
+$pk: #ffe7e7;
+$dpk: #ef6781;
+$br: #3c2121;
+$iv: #fff7e0;
+$red: #f51a2d;
+$grey: #7d7d7d;
+
+@mixin bg {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+@mixin bgv {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+@mixin grid {
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    
+}
+@mixin ff($fontname,$url){
+    @font-face {
+        font-family: '#{$fontname}';
+        src: url('./fonts/#{$url}');
+    }
+}
+
+@include ff(xc,'xeicon.ttf');
+@include ff(NsB,'NanumSquareB.ttf');
+@include ff(NsR,'NanumSquareR.ttf');
+@include ff(NsL,'NanumSquareL.ttf');
+@include ff(jal,'Jalnan.ttf');
+@include ff(gmB,'GmarketSansTTFBold.ttf');
+@include ff(gmM,'GmarketSansTTFMedium.ttf');
+@include ff(gmL,'GmarketSansTTFLight.ttf');
+
+// 메인
+.mainWrap{
+    margin-top: 190px;
+    main{
+        @include grid();
+        display: flex;
+        flex-wrap: wrap;
+        h2{
+            width: 100%;
+            font-size: 55px;
+            font-family: 'jal';
+            line-height: 60px;
+            color: $br;
+            text-align: center;
+        }
+        p{
+            line-height: 20px;
+            font-size: 13px;
+            font-family: 'NsR';
+            margin-top: 40px;
+        }
+        .mainLeft{
+            margin-top: 80px;
+            width: 50%;
+            padding: 0px 20px;
+            h3{
+                font-size: 50px;
+                line-height: 50px;
+                color: $red;
+            }
+        }
+        .mainRight{
+            margin-top: 40px;
+            width: 50%;
+            padding: 0px 20px 0px 100px;
+            .txt{
+                h5{
+                    font-size: 20px;
+                    color: $red;
+                    line-height: 40px;
+                    font-weight: 700;
+                    position: relative;
+                    margin-top: 40px;
+                    &::before{
+                        content: '';
+                        display: inline-block;
+                        height: 50px;
+                        width: 50px;
+                        @include bgv();
+                        background-image: url('../images/sub3');
+                        background-color: #000;
+                        position: absolute;
+                        top: 0;
+                        left: -18%;
+                    }
+                }
+                p{
+                    margin-top: 10px;
+                }
+                
+            }
+        }
+    }
+}
+
+// 배너
+.bnrWrap{
+    margin-top: 80px;
+    position: relative;
+    .ovrGrid{
+        height: 440px;
+        background-color: $gr;
+        position: absolute;
+        width: calc(100% / 12 * 9);
+        right: 0;
+        border-top-left-radius: 220px; 
+        border-bottom-left-radius: 220px; 
+        
+    }
+    .banner{
+        @include grid();
+        .video{
+            video{}
+        }
+        .bnrRight{
+            h2{}
+            h5{}
+            .view{
+                .imgGroup{
+                    .image{}
+                }
+            }
+            .btns{
+                span{}
+            }
+        }
+    }
+}
+
+// 컨텐츠
+.cntWrap{
+    margin-top: 80px;
+    .bar{}
+    .content{
+        @include grid();
+        h2{
+            font-size: 55px;
+            font-family: 'jal';
+            line-height: 60px;
+            color: $br;
+        }
+        section{
+            article{
+                h3{}
+                h5{}
+                p{}
+            }
+        }
+    }
+}
