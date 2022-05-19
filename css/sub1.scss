@@ -93,7 +93,7 @@ $grey: #7d7d7d;
                 text-align: center;
                 color: #fff;
                 @include bgv();
-                background-image: url('../images/sub2/hdr.jpg');
+                background-image: url('../images/sub1/hdr.jpg');
             }
         }
         section{
@@ -132,7 +132,7 @@ $grey: #7d7d7d;
                             background-position: bottom;
                             @for $img from 1 through 3{
                                 &.i#{$img}{
-                                    background-image: url('../images/sub2/new_pic0#{$img}.png');
+                                    background-image: url('../images/sub1/new_pic0#{$img}.png');
                                 }
                             }
                             &::before{
@@ -204,22 +204,22 @@ $grey: #7d7d7d;
                             @include bg;
                             @for $img from 1 through 6{
                                 &.i#{$img}{
-                                    background-image: url('../images/sub2/new_pic0#{$img}.png');
+                                    background-image: url('../images/sub1/new_pic0#{$img}.png');
                                 }
                             }
                             @for $img from 1 through 12{
                                 &.d#{$img}{
-                                    background-image: url('../images/sub2/pic0#{$img}.png');
+                                    background-image: url('../images/sub1/pic0#{$img}.png');
                                 }
                             }
                             @for $img from 1 through 9{
                                 &.k#{$img}{
-                                    background-image: url('../images/sub2/drink0#{$img}.png');
+                                    background-image: url('../images/sub1/drink0#{$img}.png');
                                 }
                             }
                             @for $img from 1 through 5{
                                 &.c#{$img}{
-                                    background-image: url('../images/sub2/ice0#{$img}.png');
+                                    background-image: url('../images/sub1/ice0#{$img}.png');
                                 }
                             }
                             &::before{
@@ -246,7 +246,7 @@ $grey: #7d7d7d;
                                 width: 60px;
                                 height: 60px;
                                 @include bg;
-                                background-image: url('../images/sub2/new.png');
+                                background-image: url('../images/sub1/new.png');
                                 right: 0;
                                 top: 0;
                                 transition: opacity 0.5s;

@@ -500,7 +500,7 @@ ul.nav{
                         .image{
                             @for $img from 1 through 12{
                                 &.i#{$img}{
-                                    background-image: url('../images/sub2/pic0#{$img}.png');
+                                    background-image: url('../images/sub1/pic0#{$img}.png');
                                 }
                             }
                         }
@@ -510,7 +510,7 @@ ul.nav{
                         .image{
                             @for $img from 1 through 9{
                                 &.i#{$img}{
-                                    background-image: url('../images/sub2/drink0#{$img}.png');
+                                    background-image: url('../images/sub1/drink0#{$img}.png');
                                 }
                             }
                         }
@@ -520,7 +520,7 @@ ul.nav{
                         .image{
                             @for $img from 1 through 9{
                                 &.i#{$img}{
-                                    background-image: url('../images/sub2/ice0#{$img}.png');
+                                    background-image: url('../images/sub1/ice0#{$img}.png');
                                 }
                             }
                         }
@@ -551,7 +551,7 @@ ul.nav{
                             background-position: bottom;
                             @for $img from 1 through 6{
                                 &.i#{$img}{
-                                    background-image: url('../images/sub2/new_pic0#{$img}.png');
+                                    background-image: url('../images/sub1/new_pic0#{$img}.png');
                                 }
                             }
                             &::before{

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/common.min.css">
     <link rel="stylesheet" href="./css/sub2.min.css">
+    <link rel="stylesheet" href="./css/sub2_tab.css" media="(max-width:1024px) and (min-width:0px)">
+    <link rel="stylesheet" href="./css/sub2_mobile.css" media="(max-width:420px) and (min-width:0px)">
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/sub2.js"></script>
@@ -51,16 +53,20 @@
         <div class="ovrGrid"></div>
         <div class="banner">
             <div class="video">
-                <video src="./videos/video1.mp4"></video>
+                <div class="btn"></div>
+                <div class="pbtn"></div>
+                <video src="./videos/video01.mp4" class="on"></video>
+                <video src="./videos/video2.mp4"></video>
+                <video src="./videos/video3.mp4"></video>
             </div>
             <div class="bnrRight">
                 <h2>오감만족 도넛교실<br>현장 스케치!</h2>
                 <h5>크리스피 도넛의 <br>크리스피 도넛에 의한 <br>크리스피 도넛 고객님들을 위한 도넛교실</h5>
                 <div class="view">
                     <div class="imgGroup">
-                        <div class="image i1"></div>
-                        <div class="image i2"></div>
-                        <div class="image i3"></div>
+                        <div class="image i1 on" data-num="0"></div>
+                        <div class="image i2" data-num="1"></div>
+                        <div class="image i3" data-num="2"></div>
                     </div>
                 </div>
                 <div class="btns">
@@ -72,8 +78,8 @@
     </div>
     <!-- 컨텐츠 -->
     <div class="cntWrap">
-        <div class="bar"></div>
         <div class="content">
+            <div class="bar"></div>
             <h2>OUR HISTORY</h2>
             <section>
                 <article>
