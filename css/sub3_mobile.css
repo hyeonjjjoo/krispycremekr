@@ -1,0 +1,71 @@
+html{
+    font-size: 9.5vw;
+}
+body{
+    font-size: 2.3vw;
+}
+
+.cntWrap{
+    margin-top: 170px;
+}
+.cntWrap .content header h2{
+    font-size: min(27px,2.7em);
+}
+.cntWrap .content header h2::before{
+    width: 20px;
+    height: 20px;
+}
+.cntWrap .content header h5{
+    font-size: min(15px,1.5em);
+}
+.cntWrap .content header h5 span::before{
+    height: 7px;
+}
+.cntWrap .content section .tab li{
+    font-size: min(15px,1.5em);
+    line-height: 40px;
+}
+.cntWrap .content section .serBox{
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 20px 10px;
+}
+.cntWrap .content section .serBox .boxLeft{
+    width: 50%;
+    text-align: left;
+    font-size: min(15px,1.5em);
+}
+.cntWrap .content section .serBox .boxLeft h4{
+    padding-left: 30px;
+}
+.cntWrap .content section .serBox .boxLeft .ser{
+    padding-left: 30px;
+}
+.cntWrap .content section .serBox .boxRight{
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 0;
+}
+.cntWrap .content section .serBox .boxRight form input{
+    font-size: min(15px,1.5em);
+}
+.cntWrap .content section .mapBox .list ul li.on{
+    height: min(160px,4rem);
+}
+.cntWrap .content section .mapBox .list ul li .image{
+    height: min(100px,2.5rem);
+}
+.cntWrap .content section .mapBox .list ul li .texts h3{
+    font-size: min(16px,1.6em);
+}
+.cntWrap .content section .mapBox .list ul li.on .texts h3{
+    
+    font-size: min(18px,1.8em);
+}
+.cntWrap .content section .mapBox .list ul li .texts .info h5{
+    display: none;
+}
+.cntWrap .content section .mapBox .list ul li .texts .info p{
+    
+    font-size: min(13px,1.3em);
+}

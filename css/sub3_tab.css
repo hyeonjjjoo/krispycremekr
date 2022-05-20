@@ -1,0 +1,44 @@
+html{
+    font-size: 5.1vw;
+}
+body{
+    font-size: 1.2vw;
+}
+
+.cntWrap .content{
+    width: 90%;
+    max-width: 700px;
+}
+.cntWrap .content section .mapBox{
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    margin-top: 0px;
+}
+.cntWrap .content section .mapBox .map{
+    width: 100%;
+}
+.cntWrap .content section .mapBox .list{
+    width: 100%;
+}
+.cntWrap .content section .mapBox .list ul li .texts h3{
+    font-size: min(23px,2.3em);
+    font-weight: 700;
+}
+.cntWrap .content section .mapBox .list ul li .texts .info h5{
+    font-size: min(18px,1.8em);
+}
+.cntWrap .content section .mapBox .list ul li .texts .info p{
+    font-size: min(21px,2.1em);
+}
+.cntWrap .content section .mapBox .map div .kakaomap{
+    max-width: 700px;
+}
+.cntWrap .content section .mapBox .map div .kakaomap .root_daum_roughmap{
+    padding-bottom: 56.25%;
+}
+.cntWrap .content section .serBox .boxLeft{
+    width: calc(100% / 8 * 2);
+}
+.cntWrap .content section .serBox .boxRight{
+    width: calc(100% / 8 * 4);
+}
