@@ -13,7 +13,121 @@
     <script src="./js/sub3.js"></script>
 </head>
 <body>
+    <!-- 헤더 -->
     <div class="hdr"></div>
+    <!-- 컨텐츠 -->
+    <div class="cntWrap">
+        <div class="content">
+            <header>
+                <h2>매장찾기</h2>
+                <h5>찾으시는 <span>매장 유형</span>을 선택해주세요</h5>
+            </header>
+            <section>
+                <ul class="tab">
+                    <li class="on">일반매장</li>
+                    <li>도넛극장</li>
+                </ul>
+                <div class="serBox">
+                    <div class="boxLeft">
+                        <h4>검색으로 찾기</h4>
+                        <ul class="ser">
+                            <li class="on">검색으로 찾기</li>
+                            <li>지역으로 찾기</li>
+                        </ul>
+                    </div>
+                    <div class="boxRight">
+                        <form action="">
+                            <input type="text" placeholder="매장명, 동명, 도로명을 검색해주세요">
+                            <input type="submit" value="" class="on">
+                        </form>
+                    </div>
+                </div>
+                <div class="mapBox">
+                    <div class="map">
+                        <!-- * 카카오맵 - 지도퍼가기 -->
+                        <!-- 1. 지도 노드 -->
+                        <div id="daumRoughmapContainer1653024043585" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+                        <!--
+                            2. 설치 스크립트
+                            * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+                        -->
+                        <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+                        <!-- 3. 실행 스크립트 -->
+                        <script charset="UTF-8">
+                            new daum.roughmap.Lander({
+                                "timestamp" : "1653024043585",
+                                "key" : "2abip",
+                                "mapWidth" : "540",
+                                "mapHeight" : "440"
+                            }).render();
+                        </script>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li class="on">
+                                <div class="image i1"></div>
+                                <div class="texts">
+                                    <h3>역곡역점</h3>
+                                    <div class="info">
+                                        <h5>Hot Light Hour Fresh Shop</h5>
+                                        <p>전화번호 032-341-1937</p>                                            
+                                    </div>
+                                </div>
+                                <span></span>
+                            </li>
+                            <li>
+                                <div class="image i2"></div>
+                                <div class="texts">
+                                    <h3>역곡역점</h3>
+                                    <div class="info">
+                                        <h5>Hot Light Hour Fresh Shop</h5>
+                                        <p>전화번호 032-341-1937</p>                                            
+                                    </div>
+                                </div>
+                                <span></span>
+                            </li>
+                            <li>
+                                <div class="image i3"></div>
+                                <div class="texts">
+                                    <h3>역곡역점</h3>
+                                    <div class="info">
+                                        <h5>Hot Light Hour Fresh Shop</h5>
+                                        <p>전화번호 032-341-1937</p>                                            
+                                    </div>
+                                </div>
+                                <span></span>
+                            </li>
+                            <li>
+                                <div class="image i4"></div>
+                                <div class="texts">
+                                    <h3>역곡역점</h3>
+                                    <div class="info">
+                                        <h5>Hot Light Hour Fresh Shop</h5>
+                                        <p>전화번호 032-341-1937</p>                                            
+                                    </div>
+                                </div>
+                                <span></span>
+                            </li>
+                            <li>
+                                <div class="image i5"></div>
+                                <div class="texts">
+                                    <h3>역곡역점</h3>
+                                    <div class="info">
+                                        <h5>Hot Light Hour Fresh Shop</h5>
+                                        <p>전화번호 032-341-1937</p>                                            
+                                    </div>
+                                </div>
+                                <span></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- 푸터 -->
     <div class="ftr"></div>
 </body>
 </html>

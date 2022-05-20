@@ -1,0 +1,263 @@
+html{
+    font-size: 3vw;
+}
+body{
+    font-size: 0.7vw;
+    overflow-x: hidden;
+}
+
+$gr: #00704a;
+$yl: #ffdf4e;
+$pc: #ffcca3;
+$pk: #ffe7e7;
+$dpk: #ef6781;
+$br: #3c2121;
+$iv: #fff7e0;
+$red: #f51a2d;
+$grey: #7d7d7d;
+
+@mixin bg {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+@mixin bgv {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+@mixin grid {
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    
+}
+@mixin ff($fontname,$url){
+    @font-face {
+        font-family: '#{$fontname}';
+        src: url('./fonts/#{$url}');
+    }
+}
+
+@include ff(xc,'xeicon.ttf');
+@include ff(NsB,'NanumSquareB.ttf');
+@include ff(NsR,'NanumSquareR.ttf');
+@include ff(NsL,'NanumSquareL.ttf');
+@include ff(jal,'Jalnan.ttf');
+@include ff(gmB,'GmarketSansTTFBold.ttf');
+@include ff(gmM,'GmarketSansTTFMedium.ttf');
+@include ff(gmL,'GmarketSansTTFLight.ttf');
+@include ff(scd,'SCDream4.ttf');
+
+
+// 컨텐츠
+.cntWrap{
+    margin-top: 190px;
+    .content{
+        width: 80%;
+        max-width: 1080px;
+        margin: 0 auto;
+        header{
+            h2{
+                font-size: 48px;
+                font-family: 'jal';
+                color: $br;
+                &::before{
+                    content: '';
+                    display: inline-block;
+                    width: 42px;
+                    height: 42px;
+                    margin-right: 10px;
+                    @include bg();
+                    background-image: url('../images/sub3/sub_arrow.png');
+                }
+            }
+            h5{
+                font-size: 27px;
+                font-family: 'NsR';
+                text-align: center;
+                margin-top: 60px;
+                span{
+                    font-weight: 700;
+                    position: relative;
+                    &::before{
+                        position: absolute;
+                        content: '';
+                        display: inline-block;
+                        width: 100%;
+                        height: 20px;
+                        background-color: $yl;
+                        z-index: -1;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+        section{
+            margin-top: 40px;
+            .tab{
+                display: flex;
+                li{
+                    width: 50%;
+                    font-family: 'NsR';
+                    text-align: center;
+                    font-size: 25px;
+                    line-height: 80px;
+                    border-bottom: 4px solid $grey;
+                    cursor: pointer;
+                    &:nth-child(1){
+                        &::before{
+                            content: '';
+                            display: inline-block;
+                            width: 30px;
+                            height: 30px;
+                            margin-right: 6px;
+                            margin-bottom: -5px;
+                            @include bg();
+                            background-image: url('../images/sub3/store_icon01.png');
+                        }
+                    }
+                    &.on{
+                        font-weight: 700;
+                        color: $red;
+                        border-bottom: 4px solid $red;
+                    }                   
+                }
+            }
+            .serBox{
+                background-color: $yl;
+                display: flex;
+                justify-content: center;
+                padding: 20px 0px;
+                .boxLeft{
+                    width: calc(100% / 12 * 2);
+                    text-align: center;
+                    font-family: 'NsR';
+                    font-size: 18px;
+                    line-height: 40px;
+                    background-color: #fff;
+                    border-radius: 20px;
+                    position: relative;
+                    h4{
+                        cursor: pointer;
+                        font-weight: 700;
+                        position: relative;
+                        padding-right: 12px;
+                        &::after{
+                            content: '';
+                            font-family: 'xc';
+                            display: inline-block;
+                            position: absolute;
+                            width: 10px;
+                            font-size: 22px;
+                            right: 27px;
+                            bottom: 0px;
+                        }
+                    }
+                    .ser{
+                        position: absolute;
+                        background-color:#fff;
+                        // display: none;
+                        border-radius: 0 0 20px 20px;
+                        z-index: 5;
+                        width: 100%;
+                        height: 0px;
+                        overflow: hidden;
+                        transition: height 0.5s;
+                        li{
+                            font-size: 14px;
+                            cursor: pointer;
+                        }
+                    }
+                    &.on{
+                        border-radius: 20px 20px 0px 0px;
+                        .ser{
+                            height: 85px;
+                        }
+                        h4{
+                            &::after{
+                                content: '';
+                            }
+                        }
+                    }
+                }
+                .boxRight{
+                    width: calc(100% / 12 * 5);
+                    margin-left: 20px;
+                        form{
+                            position: relative;
+                            input{
+                                width: 100%;
+                                font-family: 'NsR';
+                                font-size: 18px;
+                                border: 0;
+                                line-height: 40px;
+                                border-radius: 20px;
+                                padding-left: 30px;
+                                &.on{
+                                    right: 10px;
+                                    width: 60px;
+                                    position: absolute;
+                                    background-color: rgba(255, 255, 255, 0);
+                                    font-family: 'xc';
+                                    font-size: 30px;
+                                    display: inline-block;
+                                    cursor: pointer;
+                                }
+                            }
+                    }
+                }
+            }
+            .mapBox{
+                display: flex;
+                .map{
+                    
+                }
+                .list{
+                    width: 50%;
+                    ul{
+                        li{
+                            display: flex;
+                            justify-content: space-between;
+                            padding: 20px 10px;
+                            cursor: pointer;
+                            .image{
+                                width: calc(100% / 6 * 3);
+                                display: none;
+                            }
+                            .texts{
+                                width: calc(100% / 6 * 2.5);
+                                h3{
+                                    font-family: 'gmL';
+                                    font-size: 18px;
+                                    padding: 20px 0px;
+                                }
+                                .info{
+                                    display: none;
+                                }
+                            }
+                            span{
+                                width: calc(100% / 6 * 0.5);
+                                font-family: 'xc';
+                                font-size: 30px;
+                                height: 30px;
+                                line-height: 40px;
+                                font-weight: 700;
+                                margin-left: auto;
+                            }
+                            &.on{
+                                .info{
+                                    display: block;
+                                }
+                                span{
+                                    transform: rotate(180deg);
+                                    transform-origin: 34% 70%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
