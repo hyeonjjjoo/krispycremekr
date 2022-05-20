@@ -207,40 +207,34 @@ $grey: #7d7d7d;
                     }
                 }
             }
-            .roughmap_maker_label .roughmap_lebel_text{
-                display: none;
-            }
+            // .roughmap_maker_label .roughmap_lebel_text{
+            //     display: none;
+            // }
             .mapBox{
                 margin-top: 40px;
                 display: flex;
                 .map{
-                    width: 50%;
-                    div{
+                    width: 100%;
+                    .kakaomap{
+                        position: relative;
+                        max-width: 540px;
                         width: 100%;
-                        .kakaomap{
-                            position: relative;
-                            max-width: 540px;
+                        .root_daum_roughmap{
                             width: 100%;
-                            .root_daum_roughmap{
+                            padding-bottom: 81.48%;
+                            .wrap_map{
+                                position: absolute;
+                                z-index: 1;
+                                top: 0;
+                                left: 0;
                                 width: 100%;
-                                padding-bottom: 81.48%;
-                                .wrap_map{
-                                    position: absolute;
-                                    z-index: 1;
-                                    top: 0;
-                                    left: 0;
-                                    width: 100%;
-                                    height: 100%;
-                                }
-                            }
-                            .hide{
-                                display: none;
+                                height: 100%;
                             }
                         }
                     }
                 }
                 .list{
-                    width: 50%;
+                    width: 100%;
                     ul{
                         li{
                             display: flex;
