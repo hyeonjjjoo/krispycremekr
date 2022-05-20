@@ -47,6 +47,7 @@ $grey: #7d7d7d;
 @include ff(gmB,'GmarketSansTTFBold.ttf');
 @include ff(gmM,'GmarketSansTTFMedium.ttf');
 @include ff(gmL,'GmarketSansTTFLight.ttf');
+@include ff(scd,'SCDream4.ttf');
 
 // 메인
 .mainWrap{
@@ -74,7 +75,8 @@ $grey: #7d7d7d;
             width: 50%;
             padding: 0px 20px;
             h3{
-                font-size: 50px;
+                font-size: #{'min(50px,5em)'};
+                font-family: 'scd';
                 line-height: 50px;
                 color: $red;
             }
@@ -272,7 +274,7 @@ $grey: #7d7d7d;
 
 // 컨텐츠
 .cntWrap{
-    margin-top: 80px;
+    margin-top: 100px;
     .content{
         position: relative;
         padding-right: 80px;
@@ -332,10 +334,12 @@ $grey: #7d7d7d;
                     font-family: 'NsB';
                     color: $gr;
                     line-height: 40px;
+                    font-size: 22px;
                 }
                 p{
                     font-family: 'NsR';
                     line-height: 30px;
+                    font-size: 18px;
                 }
             }
         }

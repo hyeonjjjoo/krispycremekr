@@ -4,3 +4,94 @@ html{
 body{
     font-size: 1.2vw;
 }
+/* 메인 */
+.mainWrap main{
+    width: 90%;
+    max-width: 700px;
+}
+.mainWrap main .mainLeft h3 {
+    font-size: min(35px,3.5em);
+}
+.mainWrap main .mainRight{
+    padding: 0px 0px 0px min(60px,1.5rem);
+}
+.mainWrap main .mainRight .txt h5::before{
+    height: min(40px,1rem);
+    width: min(40px,1rem);
+    left: -20%;
+}
+/* 배너 */
+.bnrWrap .banner{
+    width: 90%;
+    max-width: 700px;
+    justify-content: space-between;
+}
+.bnrWrap .ovrGrid {
+    height: 340px;
+}
+.bnrWrap .banner .video{
+    width: calc(100% / 12 * 5);
+    height: 240px;
+}
+.bnrWrap .banner .video .btn{
+    width: min(80px , 2rem);
+    height: min(80px , 2rem);
+}
+.bnrWrap .banner .video .pbtn{
+    width: min(80px , 2rem);
+    height: min(80px , 2rem);
+}
+
+.bnrWrap .banner .bnrRight {
+    width: calc(100% / 12 * 6);
+}
+.bnrWrap .banner .bnrRight h2{
+    font-size: min(26px , 2.6em);
+    padding-left: 10px;
+    line-height: 30px;
+}
+.bnrWrap .banner .bnrRight h5 {
+    font-size: min(15px , 1.5em);
+}
+.bnrWrap .banner .bnrRight .view {
+    width: 60%;
+}
+.bnrWrap .banner .bnrRight .view .imgGroup{
+    width: 300%;
+}
+.bnrWrap .banner .bnrRight .view .imgGroup .image{
+    height: min(100px , 2.5rem);
+}
+.bnrWrap .banner .bnrRight .btns {
+    width: 136%;
+    top: 0;
+    bottom: -130px;
+    left: -24px;
+    height: 10px;
+    margin: auto;
+}
+.bnrWrap .banner .bnrRight .btns span{
+    font-size: min(45px , 4.5em);
+}
+.bnrWrap .banner .bnrRight .btns span:nth-child(2){
+    display: none;
+}
+
+
+/* 컨텐츠 */
+.cntWrap {
+    margin-top: 60px;
+}
+.cntWrap .content{
+    width: 90%;
+    max-width: 700px;
+}
+.cntWrap .content section article{
+    margin-top: 60px;
+}
+.cntWrap .content section article h5{
+    font-size: 21px;
+}
+.cntWrap .content section article p {
+    font-size: 15px;
+}

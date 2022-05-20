@@ -3,19 +3,28 @@ $(function(){
     var btn = $('.bnrWrap .btns span');
     var Grp = $('.imgGroup');
     var i = 0 ;
+    var wd = $(window).width();
+    var num = 0;
+    if(wd>1024){
+        num = 50;
+        num2 = 2;
+    }else{
+        num = 100;
+        num2 = 3;
+    }
 
     btn.first().click(function(){
-        i++
-        i = i%2
+        i++;
+        i = i%num2;
         Grp.animate({
-            marginLeft : -50*i+'%'
+            marginLeft : -num*i+'%'
         });
     });
     btn.last().click(function(){
-        i--
-        i = (i+2)%2
+        i--;
+        i = (i+2)%2;
         Grp.animate({
-            marginLeft : -50*i+'%'
+            marginLeft : -num*i+'%'
         });
     });
 
