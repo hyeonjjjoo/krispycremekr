@@ -4,6 +4,7 @@ html{
 body{
     font-size: 1.2vw;
 }
+
 /* 메인 */
 .mainWrap main {
     height: 440px;
@@ -51,6 +52,7 @@ body{
 .cntWrap .content header .hdrBtm {
     margin-top: 20px;
 }
+
 /* 컨텐츠1 */
 .cntWrap .content.cnt01 .dirBtn{
     width: 117%;
@@ -133,10 +135,10 @@ body{
     width: 80%;
     margin-top: 20px;
 }
-
 .bnrWrap{
     margin-top: 40px;
 } 
+
 /* 배너1 */
 .bnrWrap .bnr01 .ovrGrid {
     height: 320px;
@@ -209,7 +211,6 @@ body{
     height: min(4.25rem, 210px);
     padding: min(1.5rem, 60px) min(0.5rem, 20px);
 }
-
 .cntWrap .content.cnt04 section article .texts h4:nth-child(2){
     font-size: min(1.8em, 18px);
 }

@@ -4,11 +4,12 @@ $(function(){
     var btnLeft = $('.dirBtn .btn:nth(0)');
     var btnRight = $('.dirBtn .btn:nth(1)');
     var i = 0;
+    // 탭메뉴
     li.click(function(){
         li.removeClass('on')
         $(this).addClass('on')
     });
-    
+    // 모바일 슬라이드
     var wd = $(window).width();
     if(wd <= 420){
         artGroup.css({

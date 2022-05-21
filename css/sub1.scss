@@ -16,6 +16,7 @@ $iv: #fff7e0;
 $red: #f51a2d;
 $grey: #7d7d7d;
 
+// 이미지 속성
 @mixin bg {
     background-repeat: no-repeat;
     background-position: center;
@@ -26,23 +27,19 @@ $grey: #7d7d7d;
     background-position: center;
     background-size: cover;
 }
-
+// 폰트
 @mixin ff($fontname,$url){
     @font-face {
         font-family: '#{$fontname}';
         src: url('./fonts/#{$url}');
     }
 }
-
 @include ff(xc,'xeicon.ttf');
-@include ff(NsB,'NanumSquareB.ttf');
 @include ff(NsR,'NanumSquareR.ttf');
-@include ff(NsL,'NanumSquareL.ttf');
 @include ff(jal,'Jalnan.ttf');
-@include ff(gmB,'GmarketSansTTFBold.ttf');
 @include ff(gmM,'GmarketSansTTFMedium.ttf');
-@include ff(gmL,'GmarketSansTTFLight.ttf');
 
+// 컨텐츠
 .cntWrap{
     margin-top: 150px;
     .content{
@@ -292,6 +289,7 @@ $grey: #7d7d7d;
         }
     }
 }
+// 태블릿
 @media (max-width : 1024px) and (min-width : 0){
     html{
         font-size: 5.1vw;
@@ -368,6 +366,7 @@ $grey: #7d7d7d;
         }
     } 
 }
+// 모바일 
 @media (max-width : 420px) and (min-width : 0){
     html{
         font-size: 9.5vw;

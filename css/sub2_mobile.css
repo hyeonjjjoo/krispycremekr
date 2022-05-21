@@ -4,6 +4,7 @@ html{
 body{
     font-size: 2.3vw;
 }
+
 /* 메인 */
 .mainWrap{
     margin-top: 150px;
@@ -73,6 +74,7 @@ body{
 .bnrWrap .banner .bnrRight .btns{
     display: none;
 }
+
 /* 컨텐츠 */
 .cntWrap{
     margin-top: 40px;

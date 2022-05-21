@@ -1,5 +1,5 @@
 $(function(){
-    
+
     var num = 0; //메인 슬라이드 이동값
     var num1 = 0;  //컨텐츠1 슬라이드 이동값
     var num2 = 0;  //컨텐츠3 슬라이드 이동값
@@ -18,11 +18,14 @@ $(function(){
         num1 = 50
         num2 = 140
     }
+
     // 메인
     var btn = $('.mainWrap .btnDn');
     var gr = $('.mainWrap .artGroup');
     var q = 0;
+    // 슬라이드 기본 설정
     gr.find('article').last().prependTo(gr);
+    // 왼쪽, 오른쪽 버튼 클릭시 슬라이드이동
     btn.click(function(){
         q++
         gr.find('article:eq(1)').find('.images').css('animation-name','mnout');
@@ -39,8 +42,6 @@ $(function(){
         $('.count').find('span').text((q%3)+1);
     });
 
-
-
     // 컨텐츠1
     var li = $('.cnt01 li');
     var artGroup = $('.cnt01 .artGroup');
@@ -54,6 +55,7 @@ $(function(){
     }else if(wd<420){
         j = j+2
     }
+    // 슬라이드메뉴 탭
     li.click(function(){
         var ind = $(this).index();
         li.removeClass('on');
@@ -71,6 +73,7 @@ $(function(){
         }
 
     });
+    // 왼쪽, 오른쪽 버튼 클릭시 슬라이드이동
     btnRight.click(function(){
         i++;
         i = i%(j-3);
@@ -86,9 +89,11 @@ $(function(){
     // 컨텐츠2
     var artGroup2 = $('.cnt02 .artGroup');
     var btn2 = $('.cnt02 .btns .btn');
+    // 슬라이드 기본 설정
     artGroup2.css({
         marginLeft : '-200%'
     });
+    // 왼쪽, 오른쪽 버튼 클릭시 슬라이드이동
     btn2.eq(1).click(function(){
         artGroup2.find('article').removeClass('show');
         artGroup2.find('article').eq(3).addClass('show');
@@ -113,6 +118,7 @@ $(function(){
     // 배너1
     var img = $('.bnr01 .images');
     var bnr1 = $('body>div').eq(4).offset().top
+    // 스크롤 이벤트
     $(window).scroll(function(){
         var now = $(this).scrollTop();
         if(wd > 1024){
@@ -126,6 +132,7 @@ $(function(){
 
     // 배너2
     var bnr2 = $('.bnr02');
+    // 스크롤 이벤트
     $(window).scroll(function(){
         var now = $(this).scrollTop();
         bnr2.css('margin-left', (2600-now)*0.03+'%');
@@ -133,9 +140,10 @@ $(function(){
     });
     
     // 컨텐츠3
-    var artT = $('.cnt03 .artTop');
-    var art = $('.cnt03 article');
-    art.click(function(){
+    var artT = $('.cnt03 .artTop'); //뷰
+    var art = $('.cnt03 article'); //썸네일
+        // 썸네일 클릭시 이미지 가져오기
+        art.click(function(){
         var ind = $(this).index();
         var img = $(this).find('.image').attr('data-img');
         artT.css({
@@ -146,13 +154,12 @@ $(function(){
                 animationName: 'none' 
             });
         });
-    
-
         art.removeClass('on');
         $(this).addClass('on');
         artT.find('.image').css({
             backgroundImage : img
         });
+        // 텍스트 위아래 슬라이드 
         $('.txtGroup').animate({
             marginTop : -num2 * ind + 'px'
         },400);

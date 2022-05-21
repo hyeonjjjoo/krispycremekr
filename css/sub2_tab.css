@@ -4,6 +4,7 @@ html{
 body{
     font-size: 1.2vw;
 }
+
 /* 메인 */
 .mainWrap main{
     width: 90%;
@@ -20,6 +21,7 @@ body{
     width: min(40px,1rem);
     left: -20%;
 }
+
 /* 배너 */
 .bnrWrap .banner{
     width: 90%;
@@ -41,7 +43,6 @@ body{
     width: min(80px , 2rem);
     height: min(80px , 2rem);
 }
-
 .bnrWrap .banner .bnrRight {
     width: calc(100% / 12 * 6);
 }
@@ -76,7 +77,6 @@ body{
 .bnrWrap .banner .bnrRight .btns span:nth-child(2){
     display: none;
 }
-
 
 /* 컨텐츠 */
 .cntWrap {
