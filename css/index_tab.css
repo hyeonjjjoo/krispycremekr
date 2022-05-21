@@ -122,10 +122,11 @@ body{
     width: calc(100% / 8 * 2.5);
 }
 .cntWrap .content.cnt02 section .artGroup article .texts h3{
-    font-size: 30px;
+    font-size: min(3em, 30px);
+    line-height: 30px;
 }
 .cntWrap .content.cnt02 section .artGroup article .texts p{
-    font-size: 14px;
+    font-size: min(1.4em, 14px);
     line-height: 18px;
 }
 .cntWrap .content.cnt02 section .artGroup article .texts .btn{
@@ -144,8 +145,9 @@ body{
     padding: 60px 0px;
 }
 .bnrWrap .bnr01 .texts h2 {
-    line-height: 40px;
+    line-height: 30px;
     font-size: min(22px, 22em);
+    word-break: keep-all;
 }
 .bnrWrap .bnr01 .texts .btn {
     font-size: min(1.7em, 17px);
@@ -182,11 +184,12 @@ body{
 }
 .cntWrap .content.cnt03 section .artTop article .texts .txtGroup .txt .btn{
     margin-top: 20px;
+    padding: 15px 4px 15px 14px;
     font-size: min(1.7em, 17px);
     width: calc(100% / 6 * 2.5);
 }
 .cntWrap .content.cnt03 section .artTop article .texts .txtGroup .txt .btn span{
-    margin-left: 15px;
+    margin-left: 5px;
 }
 .cntWrap .content.cnt03 section .artBtm article{
     margin: 0 10px;

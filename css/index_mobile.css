@@ -125,7 +125,7 @@ body{
     margin: 0px -27px;
 }
 .cntWrap .content header .hdrBtm h4 {
-    font-size: 12px;
+    font-size: min(1.2em, 12px);
 }
 
 /* 컨텐츠2 */
@@ -136,7 +136,7 @@ body{
     height: 210px;
 }
 .cntWrap .content.cnt02 section .artGroup article .texts h3 {
-    font-size: 23px;
+    font-size: min(2.3em, 23px);
     line-height: 27px;
 }
 .cntWrap .content.cnt02 section .artGroup article .texts .btn{
@@ -168,12 +168,10 @@ body{
     font-size: min(15px, 1.5em);
 }
 .bnrWrap .bnr01 .texts .btn{
-    height: 35px;
+    padding: 10px 33px 10px 8px;
     width: 90%;
     margin-top: 10px;
-    line-height: 35px;
     font-size: min(1.3em, 13px);
-    padding-right: 33px;
 }
 .bnrWrap .bnr01 .texts .btn::after{
     width: 20px;
@@ -206,7 +204,7 @@ body{
 }
 .cntWrap .content.cnt03 section .artTop article .texts .txtGroup .txt h3{
     line-height: 20px;
-    font-size: 14px;
+    font-size: min(1.4em, 14px);
 }
 .cntWrap .content.cnt03 section .artTop article .texts .txtGroup .txt p{
     display: none;
@@ -214,9 +212,8 @@ body{
 .cntWrap .content.cnt03 section .artTop article .texts .txtGroup .txt .btn{
     width: calc(100% / 4 * 2.5);
     text-align: center;
-    line-height: 30px;
-    height: 30px;
     font-size: min(1.5em, 15px);
+    padding: 10px 3px 10px 10px;
 }
 .cntWrap .content.cnt03 section .artTop article .texts .txtGroup .txt .btn span{
     display: none;

@@ -234,6 +234,7 @@ body{
             h4{
                 line-height: 20px;
                 font-size: #{'min(12px , 1.2em)'};
+                word-break: keep-all;
                 &:nth-child(2){
                     margin-top: 20px;
                 }

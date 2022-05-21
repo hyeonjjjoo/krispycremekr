@@ -417,7 +417,7 @@ ul.nav{
                 display: flex;
                 justify-content: space-between;
                 h4{
-                    font-size: 17px;
+                    font-size: #{'min(17px,1.7em)'};
                     font-family: 'NsR';
                     &:nth-child(2){
                         cursor: pointer;
@@ -599,6 +599,7 @@ ul.nav{
                                 margin-top: 20px;
                                 font-size: 13px;
                                 color: #101010;
+                                word-break: keep-all;
                             }
                         }
                     }
@@ -718,7 +719,7 @@ ul.nav{
                             width: calc(100% / 12 * 2.5);
                             padding: 40px 0px;
                             h3{
-                                font-size: 36px;
+                                font-size: #{'min(3.6em, 36px)'};
                                 line-height: 40px;
                                 font-family: 'jal';
                                 color: $red;
@@ -727,9 +728,10 @@ ul.nav{
                             p{
                                 font-family: 'NsR';
                                 font-weight: 700;
-                                font-size: 15px;
+                                font-size: #{'min(1.5em, 15px)'};
                                 line-height: 20px;
                                 margin-top: 20px;
+                                word-break: keep-all;
                             }
                             .btn{
                                 font-size: #{'min(1.8em, 18px)'};
@@ -848,8 +850,9 @@ ul.nav{
                                 height: 400%;
                                 .txt{
                                     height: 400px;
+                                    word-break: keep-all;
                                     h3{
-                                        font-size: 20px;
+                                        font-size: #{'min(20px,2em)'};
                                         font-family: 'jal';
                                         text-align: center;
                                         line-height: 30px;
@@ -869,11 +872,9 @@ ul.nav{
                                         background-color: $red;
                                         color: #fff;
                                         border-radius: 25px;
-                                        line-height: 50px;
-                                        height: 50px;
                                         font-weight: 700;
                                         position: relative;
-                                        text-align: right;
+                                        padding: 15px 4px 15px 20px;
                                         width: calc(100% / 7 * 2.5);
                                         margin: 0 auto;
                                         margin-top: 60px;
@@ -885,8 +886,7 @@ ul.nav{
                                         }
                                         span{
                                             font-family: 'xc';
-                                            margin-left: 34px;
-                                            margin-right: 20px;
+                                            margin-left: 20px;
                                         }
                                     }
                                 }
@@ -1090,14 +1090,13 @@ ul.nav{
                 background-color: $iv;
                 color: $red;
                 border-radius: 25px;
-                line-height: 50px;
-                height: 50px;
+                word-break: keep-all;
                 color: $red;
                 font-weight: 700;
                 margin-top: 60px;
-                width: 51%;
+                width: 56%;
                 position: relative;
-                padding-right: 66px;
+                padding: 15px 63px 15px 8px;
                 cursor: pointer;
                 transition: all 0.3s;
                 &:hover{
