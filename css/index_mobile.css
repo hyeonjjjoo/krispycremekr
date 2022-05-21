@@ -188,6 +188,7 @@ body{
 .bnrWrap .bnr01 .images .image.i1{
     height: 200px;
 }
+
 /* 컨텐츠3 */
 .cntWrap:nth-child(7) {
     margin-top: 10px;
