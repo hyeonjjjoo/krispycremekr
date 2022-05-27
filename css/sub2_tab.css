@@ -64,7 +64,7 @@ body{
     height: min(100px , 2.5rem);
 }
 .bnrWrap .banner .bnrRight .btns {
-    width: 136%;
+    width: 10%;
     top: 0;
     bottom: -130px;
     left: -24px;

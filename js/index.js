@@ -97,7 +97,7 @@ $(function(){
     btn2.eq(1).click(function(){
         artGroup2.find('article').removeClass('show');
         artGroup2.find('article').eq(3).addClass('show');
-        artGroup2.animate({
+        artGroup2.stop().animate({
             marginLeft : '-300%',
         },500,function(){
             artGroup2.find('article').first().appendTo(artGroup2);
@@ -107,7 +107,7 @@ $(function(){
     btn2.eq(0).click(function(){
         artGroup2.find('article').removeClass('show');
         artGroup2.find('article').eq(1).addClass('show');
-        artGroup2.animate({
+        artGroup2.stop().animate({
             marginLeft : '-100%'
         },500,function(){
             artGroup2.find('article').last().prependTo(artGroup2);
